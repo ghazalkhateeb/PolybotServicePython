@@ -28,4 +28,15 @@ cd directory path
 ```
 pip install -r requirements.txt
 ```
+## Configuration <br />
+1- Set up a Telegram bot and obtain the API token. <br />
+2- Set the environment variables TELEGRAM_TOKEN and TELEGRAM_APP_URL with your Telegram bot token and your application URL, respectively. <br /> 
+
+## Usage  <br />
+```
+python app.py
+```
+
+
+
 
