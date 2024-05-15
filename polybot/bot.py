@@ -6,6 +6,7 @@ from telebot.types import InputFile
 from polybot.img_proc import Img
 
 
+
 class Bot:
 
     def __init__(self, token, telegram_chat_url):
@@ -75,4 +76,83 @@ class QuoteBot(Bot):
 
 
 class ImageProcessingBot(Bot):
-    pass
+    def handle_message(self, msg):
+        try:
+            logger.info(f'Incoming message: {msg}')
+            #Check if the received message contains a photo using the is_current_msg_photo method inherited from the Bot class.
+            if self.is_current_msg_photo(msg):
+                #Download the photo sent by the user using the download_user_photo method inherited from the Bot class.
+                #This method returns the file path of the downloaded photo.
+                img_path = self.download_user_photo(msg)
+                #Get the caption of the message provided by the user. If no caption is provided, it defaults to an empty string.
+                # The .lower() method is used to convert the caption to lowercase for case-insensitive comparison.
+                caption = msg.get('caption', '').lower()
+                #If the caption is "blur", create an Img object with the downloaded image path,
+                #apply the blur filter using the apply_blur method, and then send the processed image back to the user.
+                if caption == 'blur':
+                    img = Img(img_path)
+                    img.blur()
+                    new_img_path = img.save_img()  # Save the processed image and get the path of the new image file
+                    self.send_photo(msg['chat']['id'], new_img_path)  # Send the processed image back to the user
+                #If the caption is "contour", create an Img object with the downloaded image path,
+                #apply the contour filter using the apply_contour method, and then send the processed image back to the user.
+                elif caption == 'contour':
+                    img = Img(img_path)
+                    img.contour()
+                    new_img_path = img.save_img()  # Save the processed image and get the path of the new image file
+                    self.send_photo(msg['chat']['id'], new_img_path)  # Send the processed image back to the user
+                elif caption == 'rotate':
+                    img = Img(img_path)
+                    img.rotate()
+                    new_img_path = img.save_img()
+                    self.send_photo(msg['chat']['id'], new_img_path)
+                elif caption == 'segment':
+                    img = Img(img_path)
+                    img.segment()
+                    new_img_path = img.save_img()
+                    self.send_photo(msg['chat']['id'], new_img_path)
+                elif caption == 'salt and pepper':
+                    img = Img(img_path)
+                    img.salt_n_pepper()
+                    new_img_path = img.save_img()
+                    self.send_photo(msg['chat']['id'], new_img_path)
+                elif caption == 'concat':
+                    #Assuming there's another image to concatenate with
+                    other_img_path = 'path_to_other_image.jpg'
+                    other_img = Img(other_img_path)
+                    img = Img(img_path)
+                    img.concat(other_img)
+                    new_img_path = img.save_img()
+                    self.send_photo(msg['chat']['id'], new_img_path)
+                else:
+                    self.send_text(msg['chat']['id'],
+                       "Unsupported filter. Please use one of the following: Blur, Contour, Rotate, Segment, Salt and Pepper, Concat")
+        except Exception as e:
+            logger.error(f"Error processing image: {e}")
+            self.send_text(msg['chat']['id'], "Something went wrong... please try again.")
+        finally:
+            # Set a timeout for sending messages to Telegram
+            timeout = 10 # Timeout in seconds
+            time_start = time.time()
+            while time.time() < time_start + timeout:
+                pass
+            logger.info("Message sent successfully.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
