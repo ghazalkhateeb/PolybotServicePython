@@ -20,3 +20,12 @@ Loguru  <br />
 ```
 git clone https://github.com/ghazalkhateeb/PolybotServicePython.git
 ```
+2- Navigate to the project directory: <br />
+```
+cd directory path
+```
+3- Install dependencies using pip: <br />
+```
+pip install -r requirements.txt
+```
+
