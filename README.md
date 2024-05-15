@@ -33,9 +33,15 @@ pip install -r requirements.txt
 2- Set the environment variables TELEGRAM_TOKEN and TELEGRAM_APP_URL with your Telegram bot token and your application URL, respectively. <br /> 
 
 ## Usage  <br />
+1- Run the Flask application by executing app.py: 
 ```
 python app.py
 ```
+2- The application will start running on http://localhost:8443/.
+3- Interact with the bot via your Telegram account by sending photos with captions indicating the desired image processing filter.
+
+Example
+Send a photo with the caption "Blur" to apply the blur filter to the image.
 
 
 
