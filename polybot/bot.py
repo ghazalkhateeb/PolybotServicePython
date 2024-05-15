@@ -79,6 +79,12 @@ class ImageProcessingBot(Bot):
     def handle_message(self, msg):
         try:
             logger.info(f'Incoming message: {msg}')
+            if 'text' in msg:
+                #Greet the user.
+                if msg['text'].lower() == 'start' or 'hello' or 'hi':
+                    self.send_text(msg['chat']['id'],
+                                   "Hello! I'm the Image Processing Bot. You can send me photos with captions to apply various filters. Try sending a photo with a caption like 'Blur', 'Rotate', 'Concat', etc.")
+                return
             #Check if the received message contains a photo using the is_current_msg_photo method inherited from the Bot class.
             if self.is_current_msg_photo(msg):
                 #Download the photo sent by the user using the download_user_photo method inherited from the Bot class.
@@ -122,9 +128,11 @@ class ImageProcessingBot(Bot):
                     img.salt_n_pepper()
                     new_img_path = img.save_img()
                     self.send_photo(msg['chat']['id'], new_img_path)
+                #If the caption is "concat", create an Img object with the downloaded image path,
+                #download it once more and create another Img object.
+                #apply the concat filter using the concat() method, and then send the processed image back to the user.
                 elif caption == 'concat':
-                    #Assuming there's another image to concatenate with
-                    other_img_path = 'path_to_other_image.jpg'
+                    other_img_path = self.download_user_photo(msg)
                     other_img = Img(other_img_path)
                     img = Img(img_path)
                     img.concat(other_img)
@@ -134,6 +142,9 @@ class ImageProcessingBot(Bot):
                     #if the filter is not one of the defined, send an appropriate message to the user.
                     self.send_text(msg['chat']['id'],
                        "Unsupported filter. Please use one of the following: Blur, Contour, Rotate, Segment, Salt and Pepper, Concat")
+            else:
+                #Inform user to send a photo.
+                self.send_text(msg['chat']['id'], "Please send a photo.")
         except Exception as e:
             logger.error(f"Error processing image: {e}")
             self.send_text(msg['chat']['id'], "something went wrong... please try again")
