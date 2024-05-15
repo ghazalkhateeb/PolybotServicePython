@@ -14,3 +14,9 @@ Flask  <br />
 Matplotlib  <br />
 Telebot  <br />
 Loguru  <br />
+
+## Installation
+1- Clone this repository to your local machine: <br />
+```
+git clone https://github.com/ghazalkhateeb/PolybotServicePython.git
+```
