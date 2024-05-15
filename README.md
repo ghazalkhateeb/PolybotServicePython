@@ -9,8 +9,8 @@ Telegram webhook integration for real-time interaction.
 
 ## Prerequisites
 Before running the application, ensure you have the following installed:
-Python (>=3.6)
-Flask
-Matplotlib
-Telebot
-Loguru
+Python (>=3.6)  <br />
+Flask  <br />
+Matplotlib  <br />
+Telebot  <br />
+Loguru  <br />
