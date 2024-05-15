@@ -8,7 +8,7 @@ Error handling for graceful user experience.
 Telegram webhook integration for real-time interaction.
 
 ## Prerequisites
-Before running the application, ensure you have the following installed:
+Before running the application, ensure you have the following installed:  <br />
 Python (>=3.6)  <br />
 Flask  <br />
 Matplotlib  <br />
