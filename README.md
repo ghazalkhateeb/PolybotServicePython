@@ -40,7 +40,7 @@ python app.py
 2- The application will start running on http://localhost:8443/.
 3- Interact with the bot via your Telegram account by sending photos with captions indicating the desired image processing filter.
 
-Example
+Example: <br />
 Send a photo with the caption "Blur" to apply the blur filter to the image.
 
 
