@@ -85,32 +85,38 @@ class ImageProcessingBot(Bot):
                 #This method returns the file path of the downloaded photo.
                 img_path = self.download_user_photo(msg)
                 #Get the caption of the message provided by the user. If no caption is provided, it defaults to an empty string.
-                # The .lower() method is used to convert the caption to lowercase for case-insensitive comparison.
+                #The .lower() method is used to convert the caption to lowercase for case-insensitive comparison.
                 caption = msg.get('caption', '').lower()
                 #If the caption is "blur", create an Img object with the downloaded image path,
-                #apply the blur filter using the apply_blur method, and then send the processed image back to the user.
+                #apply the blur filter using the blur() method, and then send the processed image back to the user.
                 if caption == 'blur':
                     img = Img(img_path)
                     img.blur()
-                    new_img_path = img.save_img()  # Save the processed image and get the path of the new image file
-                    self.send_photo(msg['chat']['id'], new_img_path)  # Send the processed image back to the user
+                    new_img_path = img.save_img()  #Save the processed image and get the path of the new image file.
+                    self.send_photo(msg['chat']['id'], new_img_path)  #Send the processed image back to the user.
                 #If the caption is "contour", create an Img object with the downloaded image path,
-                #apply the contour filter using the apply_contour method, and then send the processed image back to the user.
+                #apply the contour filter using the contour() method, and then send the processed image back to the user.
                 elif caption == 'contour':
                     img = Img(img_path)
                     img.contour()
-                    new_img_path = img.save_img()  # Save the processed image and get the path of the new image file
-                    self.send_photo(msg['chat']['id'], new_img_path)  # Send the processed image back to the user
+                    new_img_path = img.save_img()  #Save the processed image and get the path of the new image file.
+                    self.send_photo(msg['chat']['id'], new_img_path)  #Send the processed image back to the user.
+                #If the caption is "rotate", create an Img object with the downloaded image path,
+                #apply the rotate filter using the rotate() method, and then send the processed image back to the user.
                 elif caption == 'rotate':
                     img = Img(img_path)
                     img.rotate()
                     new_img_path = img.save_img()
                     self.send_photo(msg['chat']['id'], new_img_path)
+                #If the caption is "segment", create an Img object with the downloaded image path,
+                #apply the segment filter using the segment() method, and then send the processed image back to the user.
                 elif caption == 'segment':
                     img = Img(img_path)
                     img.segment()
                     new_img_path = img.save_img()
                     self.send_photo(msg['chat']['id'], new_img_path)
+                #If the caption is "salt and pepper", create an Img object with the downloaded image path,
+                #apply the salt and pepper filter using the salt_n_pepper() method, and then send the processed image back to the user.
                 elif caption == 'salt and pepper':
                     img = Img(img_path)
                     img.salt_n_pepper()
@@ -125,18 +131,13 @@ class ImageProcessingBot(Bot):
                     new_img_path = img.save_img()
                     self.send_photo(msg['chat']['id'], new_img_path)
                 else:
+                    #if the filter is not one of the defined, send an appropriate message to the user.
                     self.send_text(msg['chat']['id'],
                        "Unsupported filter. Please use one of the following: Blur, Contour, Rotate, Segment, Salt and Pepper, Concat")
         except Exception as e:
             logger.error(f"Error processing image: {e}")
-            self.send_text(msg['chat']['id'], "Something went wrong... please try again.")
-        finally:
-            # Set a timeout for sending messages to Telegram
-            timeout = 10 # Timeout in seconds
-            time_start = time.time()
-            while time.time() < time_start + timeout:
-                pass
-            logger.info("Message sent successfully.")
+            self.send_text(msg['chat']['id'], "something went wrong... please try again")
+
 
 
 

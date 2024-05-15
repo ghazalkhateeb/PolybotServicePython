@@ -86,7 +86,7 @@ class Img:
                 concatenated_row_data = row + other_row
                 #Append the concatenated row.
                 concatenated_image_data.append(concatenated_row_data)
-            #Update the self.data attribute with the concatenated image data
+            #Update the self.data attribute with the concatenated image data.
             self.data = concatenated_image_data
 
 
