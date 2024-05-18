@@ -42,11 +42,10 @@ pip install -r requirements.txt
    ```
    https://ngrok.com/ 
    ```
-<br />
-   and go over the instructions :  <br />
+   and go over the instructions :
     ```
     https://dashboard.ngrok.com/get-started/setup 
-    ```
+    ``` 
 4- run this command: <br />
    ```
    ngrok http 8443
