@@ -40,13 +40,14 @@ pip install -r requirements.txt
 2- Set the environment variables TELEGRAM_TOKEN with your Telegram bot token. <br />
 3- Sign up for the Ngrok service:  
    ```
-   https://ngrok.com/ <br />
+   https://ngrok.com/ 
    ```
+<br />
    and go over the instructions :  <br />
     ```
     https://dashboard.ngrok.com/get-started/setup 
     ```
-4- run this command:
+4- run this command: <br />
    ```
    ngrok http 8443
    ```
@@ -60,7 +61,7 @@ pip install -r requirements.txt
 python app.py
 ```
 2- The application will start running.  <br /> 
-3- Interact with the bot via your Telegram account by sending photos with captions indicating the desired image processing filter.
+3- Interact with the bot via your Telegram account by sending photos with captions indicating the desired image processing filter. <br />
 
 Example: <br />
 Send a photo with the caption "Blur" to apply the blur filter to the image.
