@@ -37,7 +37,7 @@ pip install -r requirements.txt
 ```
 python app.py
 ```
-2- The application will start running on http://localhost:8443/.
+2- The application will start running on http://localhost:8443/.  <br /> 
 3- Interact with the bot via your Telegram account by sending photos with captions indicating the desired image processing filter.
 
 Example: <br />
