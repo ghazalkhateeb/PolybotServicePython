@@ -32,12 +32,12 @@ cd directory path
 pip install -r requirements.txt
 ```
 ## Configuration <br />
-1- Set up a Telegram bot and obtain the API token. <br />
-   follow this link to create the bot.
+1- Set up a Telegram bot and obtain the token following this link: . <br />
    ```
    https://core.telegram.org/bots/features#botfather
    ```
 2- Set the environment variables TELEGRAM_TOKEN with your Telegram bot token. <br />
+
 3- Sign up for the Ngrok service:  
    ```
    https://ngrok.com/ 
@@ -45,6 +45,7 @@ pip install -r requirements.txt
    and go over the instructions : <br />
     
     https://dashboard.ngrok.com/get-started/setup 
+    
 4- run this command: <br />
    ```
    ngrok http 8443
@@ -59,7 +60,7 @@ pip install -r requirements.txt
 python app.py
 ```
 2- The application will start running.  <br /> 
-   you can greet the bot using those three words:
+3- you can greet the bot using those three words:
    start, hello, hi.
 ![image](https://github.com/ghazalkhateeb/PolybotServicePython/assets/99688953/ef60df31-a8a5-4cb1-95b4-c442be2185b1)
 
