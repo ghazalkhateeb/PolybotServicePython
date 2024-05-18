@@ -59,6 +59,10 @@ pip install -r requirements.txt
 python app.py
 ```
 2- The application will start running.  <br /> 
+   you can greet the bot using those three words:
+   start, hello, hi.
+![image](https://github.com/ghazalkhateeb/PolybotServicePython/assets/99688953/ef60df31-a8a5-4cb1-95b4-c442be2185b1)
+
 3- Interact with the bot via your Telegram account by sending photos with captions indicating the desired image processing filter. <br />
 
 Example: <br />
