@@ -70,7 +70,7 @@ example 1: <br />
 example 2: <br /> 
 ![image](https://github.com/ghazalkhateeb/PolybotServicePython/assets/99688953/807a44a6-90a3-40fa-9d4c-ce75c8a465e2)  <br />
 
-## Contributing:
+## Contributing
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue.
 
 
