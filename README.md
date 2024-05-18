@@ -42,7 +42,7 @@ pip install -r requirements.txt
    ```
    https://ngrok.com/ 
    ```
-   and go over the instructions :
+   and go over the instructions : <br />
     ```
     https://dashboard.ngrok.com/get-started/setup 
     ``` <br />
