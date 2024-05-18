@@ -38,7 +38,7 @@ pip install -r requirements.txt
    https://core.telegram.org/bots/features#botfather
    ```
 2- Set the environment variables TELEGRAM_TOKEN with your Telegram bot token. <br />
-3- Sign up for the Ngrok service:  <br />
+3- Sign up for the Ngrok service:  
    ```
    https://ngrok.com/ <br />
    ```
