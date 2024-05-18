@@ -2,7 +2,13 @@
 
 ## Introduction
 This repository contains code for an Image Processing Bot built using Python, Flask, and the Telegram API.<br />
-The bot allows users to send photos with captions indicating the desired image processing filter to apply, such as blur, contour, rotate, segment, salt and pepper, or concatenation.
+The bot allows users to send photos with captions indicating the desired image processing filter to apply, such as:
+blur <br />
+contour  <br />
+rotate <br />
+segment <br />
+salt and pepper  <br />
+concatenation <br />
 
 ## Features
 Apply various image processing filters to photos sent by users. <br />
