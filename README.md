@@ -64,6 +64,10 @@ python app.py
 ![image](https://github.com/ghazalkhateeb/PolybotServicePython/assets/99688953/ef60df31-a8a5-4cb1-95b4-c442be2185b1)
 
 3- Interact with the bot via your Telegram account by sending photos with captions indicating the desired image processing filter. <br />
+![image](https://github.com/ghazalkhateeb/PolybotServicePython/assets/99688953/8e3d9757-cb14-46a9-ae84-7827648ef2c4)
+![image](https://github.com/ghazalkhateeb/PolybotServicePython/assets/99688953/807a44a6-90a3-40fa-9d4c-ce75c8a465e2)
+
+
 
 Example: <br />
 Send a photo with the caption "Blur" to apply the blur filter to the image.
