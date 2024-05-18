@@ -48,14 +48,12 @@ class Img:
             self.data[i] = res
 
     def rotate(self):
+        height = len(self.data)
         width = len(self.data[0])
-        for i in range(width // 2):
-            for j in range(i, width - i - 1):
-                tmp = self.data[i][j]
-                self.data[i][j] = self.data[width - 1 - j][i]
-                self.data[width - 1 - j][i] = self.data[width - 1 - i][width - 1 - j]
-                self.data[width - 1 - i][width - 1 - j] = self.data[j][width - 1 - i]
-                self.data[j][width - 1 - i] = tmp
+        #Transpose the matrix
+        transposed_data = [[self.data[j][i] for j in range(height)] for i in range(width)]
+        #Reverse the order of columns in the transposed matrix to rotate 90 degrees clockwise
+        self.data = [row[::-1] for row in transposed_data]
 
     def salt_n_pepper(self):
         height = len(self.data)

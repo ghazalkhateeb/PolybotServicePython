@@ -112,8 +112,8 @@ class ImageProcessingBot(Bot):
                 elif caption == 'rotate':
                     img = Img(img_path)
                     img.rotate()
-                    new_img_path = img.save_img()
-                    self.send_photo(msg['chat']['id'], new_img_path)
+                    new_img_path = img.save_img()  # Save the processed image and get the path of the new image file.
+                    self.send_photo(msg['chat']['id'], new_img_path)  #Send the processed image back to the user.
                 #If the caption is "segment", create an Img object with the downloaded image path,
                 #apply the segment filter using the segment() method, and then send the processed image back to the user.
                 elif caption == 'segment':
