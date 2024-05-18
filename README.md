@@ -33,7 +33,26 @@ pip install -r requirements.txt
 ```
 ## Configuration <br />
 1- Set up a Telegram bot and obtain the API token. <br />
-2- Set the environment variables TELEGRAM_TOKEN and TELEGRAM_APP_URL with your Telegram bot token and your application URL, respectively. <br /> 
+   follow this link to create the bot.
+   ```
+   https://core.telegram.org/bots/features#botfather
+   ```
+2- Set the environment variables TELEGRAM_TOKEN with your Telegram bot token. <br />
+3- Sign up for the Ngrok service:  <br />
+   ```
+   https://ngrok.com/ <br />
+   ```
+   and go over the instructions :  <br />
+    ```
+    https://dashboard.ngrok.com/get-started/setup 
+    ```
+4- run this command:
+   ```
+   ngrok http 8443
+   ```
+   When the command ran, you will see "Forwarding line" with a link.  <br />
+  
+4- Set the environment variables TELEGRAM_APP_URL with your application URL in the forwarding line. <br /> 
 
 ## Usage  <br />
 1- Run the Flask application by executing app.py: 
