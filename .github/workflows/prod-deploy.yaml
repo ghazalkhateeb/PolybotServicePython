@@ -21,6 +21,7 @@ jobs:
         run: |
           echo "$SSH_PRIVATE_KEY" > mykey.pem
           chmod 400 mykey.pem
+          scp -r -i mykey.pem /.github/workflows/prod-deploy.yaml ubuntu@EC2_PUBLIC_IP:/home/ubuntu/Polybot/PolybotServicePython/.github/workflows
           scp -r -i  mykey.pem /polybot/bot.py ubuntu@EC2_PUBLIC_IP:/home/ubuntu/Polybot/PolybotServicePython/polybot
           scp -r -i  mykey.pem /polybot/img_proc.py ubuntu@EC2_PUBLIC_IP:/home/ubuntu/Polybot/PolybotServicePython/polybot
           ssh -i mykey.pem ubuntu@EC2_PUBLIC_IP
