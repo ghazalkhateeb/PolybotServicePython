@@ -81,7 +81,7 @@ class ImageProcessingBot(Bot):
                 #Greet the user.
                 if msg['text'].lower() == 'start' or 'hello' or 'hi':
                     self.send_text(msg['chat']['id'],
-                                   "Hello! I'm the Image Processing Bot. You can send me photos with captions to apply various filters. Try sending a photo with a caption like 'Blur', 'Rotate', 'Concat', etc.")
+                                   "Hi! I'm the Image Processing Bot. You can send me photos with captions to apply various filters. Try sending a photo with a caption like 'Blur', 'Rotate', 'Concat', etc.")
                 return
             #Check if the received message contains a photo using the is_current_msg_photo method inherited from the Bot class.
             if self.is_current_msg_photo(msg):
